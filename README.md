@@ -43,6 +43,23 @@ DSH 原生 · 真实封面审计 · 爆款资产复用 · 单页可视化报告
 
 DSH 会扫描用户级 `~/.dsh/skills` 和项目级 `.dsh/skills`。仓库根目录本身就是可安装 Skill，不要再多套一层目录。
 
+### 最快方式：直接克隆
+
+Windows PowerShell：
+
+```powershell
+$skillsDir = Join-Path ([Environment]::GetFolderPath('UserProfile')) '.dsh\skills'
+New-Item -ItemType Directory -Path $skillsDir -Force | Out-Null
+git clone https://github.com/kingselyjoe/xhs-chaijie-dsh.git (Join-Path $skillsDir 'xhs-chaijie-dsh')
+```
+
+macOS / Linux：
+
+```bash
+mkdir -p "${DSH_HOME:-$HOME/.dsh}/skills"
+git clone https://github.com/kingselyjoe/xhs-chaijie-dsh.git "${DSH_HOME:-$HOME/.dsh}/skills/xhs-chaijie-dsh"
+```
+
 ### 方式一：下载后运行安装脚本
 
 Windows PowerShell：
