@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <link rel="icon" href="data:,">
+  <title>周末小厨房（虚构示例）｜小红书账号拆解报告</title>
+  <style>
+    :root {
+      --accent: #d66b32;
+      --accent-2: #f29a58;
+      --accent-deep: #5a3020;
+      --accent-soft: #fff0e2;
+      --ink: #24211f;
+      --muted: #736c67;
+      --line: #eadfd5;
+      --paper: #fff;
+      --canvas: #fffaf5;
+      --cream: #fff4e8;
+      --green: #39705b;
+      --warn: #a97800;
+      --shadow: 0 16px 44px rgba(83, 46, 23, .10);
+      --soft-shadow: 0 8px 26px rgba(83, 46, 23, .055);
+      --radius: 20px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: linear-gradient(180deg, var(--canvas) 0, #fff 26%, #fff9f3 100%); font: 15px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; }
+    h1, h2, h3, p, a, td, th { overflow-wrap: anywhere; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-underline-offset: 3px; }
+    .wrap { width: min(1180px, calc(100% - 56px)); margin: 0 auto; }
+    .topbar { position: sticky; top: 0; z-index: 20; border-bottom: 1px solid color-mix(in srgb, var(--accent) 16%, white); background: color-mix(in srgb, var(--canvas) 90%, transparent); backdrop-filter: blur(16px); }
+    .topbar-inner { min-height: 60px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 11px; white-space: nowrap; }
+    .brand-mark { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 10px; color: #fff; background: var(--accent); font-weight: 900; }
+    .brand strong { font-size: 14px; letter-spacing: .08em; }
+    .brand small { color: var(--muted); }
+    .nav { display: flex; align-items: center; gap: 17px; overflow: auto; white-space: nowrap; scrollbar-width: none; }
+    .nav::-webkit-scrollbar { display: none; }
+    .nav a { color: var(--muted); font-size: 13px; text-decoration: none; }
+    .nav a:hover, .nav a.active { color: var(--accent); }
+    .hero { padding: 56px 0 30px; }
+    .hero-grid { display: grid; grid-template-columns: 1.28fr .72fr; gap: 26px; align-items: stretch; }
+    .hero-main { position: relative; isolation: isolate; min-height: 500px; padding: 44px; overflow: hidden; border-radius: 28px; color: #fff; background: radial-gradient(circle at 88% 10%, color-mix(in srgb, var(--accent-2) 90%, white) 0, transparent 29%), linear-gradient(135deg, var(--accent-deep), color-mix(in srgb, var(--accent-deep) 56%, var(--accent)) 62%, var(--accent)); box-shadow: var(--shadow); }
+    .hero-main::after { content: "析"; position: absolute; z-index: -1; right: -10px; bottom: -110px; color: rgba(255,255,255,.055); font: 900 290px/1 Georgia, serif; }
+    .eyebrow { margin: 0 0 15px; font-size: 12px; font-weight: 850; letter-spacing: .17em; text-transform: uppercase; opacity: .82; }
+    .hero h1 { max-width: 790px; margin: 0; font-size: clamp(38px, 5vw, 64px); line-height: 1.1; letter-spacing: -.035em; }
+    .hero h1 em { color: #ffd1ad; font-style: normal; }
+    .hero-lead { max-width: 720px; margin: 22px 0 0; color: #ffe9da; font-size: 18px; }
+    .hero-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+    .pill { padding: 6px 11px; border: 1px solid rgba(255,255,255,.27); border-radius: 99px; background: rgba(255,255,255,.08); font-size: 12px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 43px; padding: 9px 16px; border: 1px solid rgba(255,255,255,.38); border-radius: 11px; color: #fff; text-decoration: none; font-weight: 760; }
+    .button.primary { border-color: #fff; background: #fff; color: var(--accent-deep); }
+    .profile-card { padding: 25px; border: 1px solid var(--line); border-radius: 28px; background: var(--paper); box-shadow: var(--shadow); }
+    .identity { display: flex; align-items: center; gap: 14px; }
+    .avatar { width: 66px; height: 66px; border: 3px solid var(--cream); border-radius: 18px; object-fit: cover; background: var(--cream); }
+    .identity h2 { margin: 0; font-size: 20px; line-height: 1.3; }
+    .identity p { margin: 4px 0 0; color: var(--muted); font-size: 12px; }
+    .metrics { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin: 20px 0; }
+    .metric { padding: 12px 9px; border-radius: 13px; background: var(--canvas); text-align: center; }
+    .metric b { display: block; color: var(--accent-deep); font-size: 20px; line-height: 1.2; }
+    .metric span { color: var(--muted); font-size: 11px; }
+    .hero-cover-wrap { display: grid; grid-template-columns: 126px 1fr; gap: 15px; align-items: center; padding-top: 18px; border-top: 1px solid var(--line); }
+    .hero-cover { width: 126px; aspect-ratio: 3/4; border-radius: 13px; object-fit: contain; background: var(--cream); }
+    .verdict b { color: var(--accent); font-size: 12px; }
+    .verdict p { margin: 5px 0 0; color: #5c544f; font-size: 13px; }
+    .evidence-link { display: inline-flex; margin-top: 8px; color: var(--accent); font-size: 12px; font-weight: 800; text-decoration: none; }
+    .conclusions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 18px; }
+    .take { min-height: 142px; padding: 20px; border: 1px solid var(--line); border-radius: 18px; background: var(--paper); }
+    .take .n { color: var(--accent); font: 850 11px/1.2 ui-monospace, monospace; letter-spacing: .08em; }
+    .take h3 { margin: 9px 0 6px; font-size: 17px; }
+    .take p { margin: 0; color: var(--muted); font-size: 13px; }
+    section.content-section { padding: 38px 0 56px; }
+    section.content-section:nth-of-type(even) { background: color-mix(in srgb, var(--cream) 36%, transparent); }
+    .section-head { display: grid; grid-template-columns: 82px 1fr; gap: 20px; align-items: start; margin-bottom: 24px; }
+    .section-no { color: color-mix(in srgb, var(--accent) 35%, white); font: 900 46px/1 Georgia, serif; }
+    .section-head h2 { margin: 0 0 7px; font-size: 30px; line-height: 1.2; }
+    .section-head p { max-width: 850px; margin: 0; color: var(--muted); }
+    .chapter-note { margin-top: 18px; padding: 17px 19px; border-left: 5px solid var(--accent); border-radius: 14px; background: var(--accent-soft); color: var(--accent-deep); }
+    .timeline { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+    .phase { padding: 22px; border: 1px solid var(--line); border-top: 5px solid var(--accent); border-radius: var(--radius); background: var(--paper); box-shadow: var(--soft-shadow); }
+    .date { color: var(--accent); font-size: 12px; font-weight: 850; }
+    .phase h3 { margin: 7px 0 12px; font-size: 18px; }
+    .phase dl, .diag dl { margin: 0; }
+    .phase dt, .diag dt { margin-top: 10px; color: var(--muted); font-size: 11px; font-weight: 800; }
+    .phase dd, .diag dd { margin: 2px 0; font-size: 13px; }
+    .diagnosis { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+    .card { padding: 22px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--paper); box-shadow: var(--soft-shadow); }
+    .diag:last-child:nth-child(odd) { grid-column: 1/-1; }
+    .card h3 { margin: 0 0 9px; font-size: 18px; }
+    .score { float: right; padding: 3px 8px; border-radius: 99px; background: #edf7f1; color: var(--green); font-size: 11px; }
+    .asset-lead { display: grid; grid-template-columns: .88fr 1.12fr; gap: 18px; margin-bottom: 18px; }
+    .asset-rule { padding: 27px; border: 1px solid #efd4be; border-radius: 23px; background: linear-gradient(135deg, var(--accent-soft), var(--canvas)); }
+    .asset-rule span { display: block; margin-bottom: 8px; color: var(--accent); font-size: 11px; font-weight: 850; letter-spacing: .1em; }
+    .asset-rule b { display: block; color: var(--accent-deep); font-size: clamp(21px, 3vw, 31px); line-height: 1.35; }
+    .bar-chart { display: grid; gap: 14px; padding: 23px; border: 1px solid var(--line); border-radius: 23px; background: var(--paper); }
+    .bar-row { display: grid; grid-template-columns: 90px 1fr 62px; gap: 10px; align-items: center; }
+    .bar-row span { font-size: 12px; }
+    .bar-row b { color: var(--accent); font-size: 12px; text-align: right; }
+    .bar-track { height: 9px; overflow: hidden; border-radius: 99px; background: #f2e8df; }
+    .bar { height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--accent), var(--accent-2)); }
+    .covers { display: grid; grid-template-columns: repeat(4, 1fr); gap: 13px; }
+    .cover-card { overflow: hidden; border: 1px solid var(--line); border-radius: 18px; background: var(--paper); box-shadow: var(--soft-shadow); }
+    .cover-card > a { display: block; padding: 8px; background: var(--canvas); }
+    .cover-card img { width: 100%; aspect-ratio: 3/4; border-radius: 12px; object-fit: contain; }
+    .cover-body { padding: 13px 15px 15px; }
+    .cover-body b, .cover-body span { display: block; }
+    .cover-body span { margin-top: 3px; color: var(--muted); font-size: 11px; }
+    .compare { display: grid; grid-template-columns: 1fr 54px 1fr; gap: 14px; align-items: center; margin-top: 17px; }
+    .compare-card { padding: 20px; border: 1px solid var(--line); border-radius: 18px; background: var(--paper); }
+    .compare-card h3 { margin: 7px 0; }
+    .compare-card p { margin: 0; color: var(--muted); }
+    .tag { display: inline-block; padding: 3px 8px; border-radius: 7px; background: var(--accent-soft); color: var(--accent); font-size: 11px; font-weight: 850; }
+    .versus { color: var(--accent); font-weight: 900; text-align: center; }
+    .formulas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 13px; margin-top: 17px; }
+    .formula { padding: 20px; border: 1px solid #efd4be; border-radius: 18px; background: var(--accent-soft); }
+    .formula b { display: block; margin-bottom: 7px; color: var(--accent); }
+    .table-wrap { margin-top: 18px; overflow-x: auto; border: 1px solid var(--line); border-radius: 18px; background: var(--paper); }
+    table { width: 100%; min-width: 790px; border-collapse: collapse; }
+    th, td { padding: 13px 12px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    th { background: var(--canvas); color: var(--muted); font-size: 11px; }
+    td { font-size: 13px; }
+    tr:last-child td { border-bottom: 0; }
+    .risks { display: grid; grid-template-columns: repeat(4, 1fr); gap: 13px; }
+    .risk { padding: 19px; border: 1px solid var(--line); border-top: 4px solid var(--warn); border-radius: 17px; background: var(--paper); }
+    .risk p { margin: 7px 0 0; color: var(--muted); font-size: 13px; }
+    .learn-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+    .learn-grid p, .route p { margin: 0; color: var(--muted); }
+    .route { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 17px; }
+    .route .card { border-top: 5px solid var(--accent); }
+    .ratio { display: grid; grid-template-columns: 2fr 1fr 1fr; height: 12px; margin: 24px 0 8px; overflow: hidden; border-radius: 99px; }
+    .ratio span:nth-child(1) { background: var(--accent-deep); }
+    .ratio span:nth-child(2) { background: var(--accent); }
+    .ratio span:nth-child(3) { background: var(--accent-2); }
+    .muted { color: var(--muted); }
+    .source-card { display: grid; grid-template-columns: 1.1fr .9fr; gap: 20px; padding: 24px; border-radius: 20px; background: #35261f; color: #f7e8dc; }
+    .source-card p { margin: 0; color: #d4bfb0; }
+    .source-list { columns: 2; margin: 0; padding-left: 20px; }
+    .source-list a { color: #ffd2b1; }
+    .contact { display: flex; align-items: center; gap: 17px; margin-top: 17px; padding: 18px; border: 1px solid var(--line); border-radius: 18px; background: var(--paper); }
+    .contact[hidden] { display: none; }
+    .contact img { width: 112px; height: 112px; object-fit: contain; }
+    .contact p { margin: 2px 0; color: var(--muted); }
+    footer { padding: 16px 0 42px; color: var(--muted); font-size: 12px; text-align: center; }
+    @media (max-width: 920px) { .nav { display: none; } .hero-grid, .asset-lead { grid-template-columns: 1fr; } .hero-main { min-height: auto; } .profile-card { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; } .profile-card .identity { grid-column: 1/-1; } .hero-cover-wrap { padding: 0; border: 0; } .conclusions { grid-template-columns: 1fr; } .covers { grid-template-columns: repeat(2, 1fr); } .risks { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 620px) { .wrap { width: min(100% - 22px, 520px); } .topbar-inner { min-height: 54px; } .brand small { display: none; } .hero { padding-top: 24px; } .hero-main { padding: 26px; border-radius: 22px; } .hero h1 { font-size: 35px; } .hero-lead { font-size: 15px; } .profile-card { display: block; border-radius: 22px; } .hero-cover-wrap { margin-top: 18px; padding-top: 17px; border-top: 1px solid var(--line); } section.content-section { padding: 30px 0 42px; } .section-head { grid-template-columns: 54px 1fr; gap: 11px; } .section-no { font-size: 32px; } .section-head h2 { font-size: 24px; } .timeline, .diagnosis, .covers, .formulas, .risks, .learn-grid, .route { grid-template-columns: 1fr; } .diag:last-child:nth-child(odd) { grid-column: auto; } .compare { grid-template-columns: 1fr; } .versus { padding: 2px; } .bar-row { grid-template-columns: 78px 1fr 54px; } .source-card { grid-template-columns: 1fr; } .source-list { columns: 1; } .contact { align-items: flex-start; flex-direction: column; } }
+    @media print { body { background: #fff; } .topbar { display: none; } .hero-main, .profile-card, .card, .phase, .cover-card { box-shadow: none; } section.content-section { break-inside: avoid; } }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+  <!-- 替换全部双中括号字段；删除无证据的示例项；二维码未提供时保持 contact hidden。 -->
+  <header class="topbar"><div class="wrap topbar-inner"><div class="brand"><span class="brand-mark">L</span><strong>LONGJIN</strong><small>/ 小红书账号拆解</small></div><nav class="nav" aria-label="报告导航"><a href="#summary">总览</a><a href="#evolution">演化</a><a href="#diagnosis">诊断</a><a href="#assets">爆款资产</a><a href="#compliance">合规</a><a href="#route">路线</a><a href="#sources">来源</a></nav></div></header>
+  <main>
+    <section class="hero" id="summary"><div class="wrap"><div class="hero-grid">
+      <article class="hero-main"><p class="eyebrow">XIAOHONGSHU ACCOUNT INTELLIGENCE · 2026-08-27</p><h1>它靠 <em>明确的下班场景</em>，持续 复用时间承诺与步骤清单，从而 形成稳定的效率做饭识别。</h1><p class="hero-lead">这是一个仅用于展示报告结构的虚构账号。它把每篇内容都压缩成可验证的时间、预算和步骤，用户无需先认识创作者，也能立即判断内容是否值得保存。</p><div class="hero-meta"><span class="pill">一人食 · 效率做饭</span><span class="pill">公开证据</span><span class="pill">真实封面审计</span><span class="pill">可执行路线</span></div><div class="actions"><a class="button primary" href="#assets">查看爆款资产</a><a class="button" href="https://www.xiaohongshu.com/" target="_blank" rel="noopener noreferrer">打开账号 ↗</a></div></article>
+      <aside class="profile-card"><div class="identity"><a href="https://www.xiaohongshu.com/" target="_blank" rel="noopener noreferrer"><img class="avatar" src="assets/avatar.svg" alt="周末小厨房（虚构示例） 头像"></a><div><h2>周末小厨房（虚构示例）</h2><p>一人食 · 效率做饭 · 数据截至 2026-08-27</p></div></div><div class="metrics"><div class="metric"><b>24 篇</b><span>虚构可见样本</span></div><div class="metric"><b>3 类</b><span>稳定内容支柱</span></div><div class="metric"><b>4 张</b><span>封面视觉样本</span></div><div class="metric"><b>90 天</b><span>示例观察窗口</span></div></div><div class="hero-cover-wrap"><a href="https://www.xiaohongshu.com/" target="_blank" rel="noopener noreferrer"><img class="hero-cover" src="assets/cover-1.svg" alt="代表笔记封面，完整 3:4 显示"></a><div class="verdict"><b>确定结论</b><p>虚构样本中，“明确时长 + 完整成品 + 步骤清单”同时出现，内容承诺最完整。</p><a class="evidence-link" href="https://www.xiaohongshu.com/" target="_blank" rel="noopener noreferrer">查看原笔记 ↗</a></div></div></aside>
+    </div><div class="conclusions"><article class="take"><span class="n">01 / STRATEGY</span><h3>把做饭变成时间管理</h3><p>同一人群、同一下班场景，只替换菜谱和限制条件。</p></article><article class="take"><span class="n">02 / ADVANTAGE</span><h3>承诺可被画面证明</h3><p>成品、时间与食材数量都在封面或正文交付。</p></article><article class="take"><span class="n">03 / PROBLEM</span><h3>后期出现机械复刻</h3><p>只换菜名、不增加步骤或选择理由时，信息增量变弱。</p></article></div></div></section>
+    <section class="content-section" id="evolution"><div class="wrap"><div class="section-head"><div class="section-no">01</div><div><h2>带日期的账号演化</h2><p><b>结论：</b>从记录菜谱转向解决下班后时间与预算问题，是可见样本中的关键变化。</p></div></div><div class="timeline">
+      <article class="phase"><span class="date">2026.01—02</span><h3>记录探索</h3><dl><dt>代表内容</dt><dd>今天吃什么 · <a href="https://www.xiaohongshu.com/" target="_blank" rel="noopener noreferrer">查看代表笔记</a></dd><dt>当时做法</dt><dd>以成品记录为主，标题宽泛。</dd><dt>变化与保留</dt><dd>保留真实成品，放弃无明确对象的日记式标题。</dd></dl></article>
+      <article class="phase"><span class="date">2026.03—04</span><h3>场景聚焦</h3><dl><dt>代表内容</dt><dd>下班 30 分钟晚餐 · <a href="https://www.xiaohongshu.com/" target="_blank" rel="noopener noreferrer">查看代表笔记</a></dd><dt>当时做法</dt><dd>加入时间、预算和一人食限制。</dd><dt>变化与保留</dt><dd>将“好吃”改造成“下班可执行”。</dd></dl></article>
+      <article class="phase"><span class="date">2026.05—06</span><h3>结构复用</h3><dl><dt>代表内容</dt><dd>三菜一汤 45 分钟 · <a href="https://www.xiaohongshu.com/" target="_blank" rel="noopener noreferrer">查看代表笔记</a></dd><dt>当时做法</dt><dd>固定成品图、数字标题和步骤清单。</dd><dt>变化与保留</dt><dd>保留场景与结构，每篇增加菜谱和备菜信息。</dd></dl></article>
+    </div><p class="chapter-note"><b>最关键转折：</b>首次把“下班后”写进标题并用时间顺序兑现，账号才从个人记录变为稳定解决方案。</p></div></section>
+    <section class="content-section" id="diagnosis"><div class="wrap"><div class="section-head"><div class="section-no">02</div><div><h2>五项内容诊断</h2><p><b>结论：</b>定位、选题和内容价值已形成闭环，下一步不是扩人群，而是增加同一结构里的信息增量。</p></div></div><div class="diagnosis">
+      <article class="card diag"><h3>定位与人群 <span class="score">强</span></h3><dl><dt>现状与证据</dt><dd>主页和近期样本持续指向下班做饭。</dd><dt>判断</dt><dd>人群和场景明确。</dd><dt>动作</dt><dd>继续锁定工作日晚餐，不提前扩到所有家庭餐。</dd></dl></article><article class="card diag"><h3>选题与需求 <span class="score">强</span></h3><dl><dt>现状与证据</dt><dd>时间、预算、一锅到底反复出现。</dd><dt>判断</dt><dd>需求稳定且可系列化。</dd><dt>动作</dt><dd>按限制条件建立栏目，而非随机发菜名。</dd></dl></article><article class="card diag"><h3>标题与封面 <span class="score">中</span></h3><dl><dt>现状与证据</dt><dd>数字与成品图稳定，但低效样本标题宽泛。</dd><dt>判断</dt><dd>识别度已建立，承诺强弱仍波动。</dd><dt>动作</dt><dd>封面只保留一个主承诺，并增加证据。</dd></dl></article><article class="card diag"><h3>内容价值 <span class="score">强</span></h3><dl><dt>现状与证据</dt><dd>虚构正文包含备菜顺序、预算和替代食材。</dd><dt>判断</dt><dd>内容能直接执行。</dd><dt>动作</dt><dd>每篇至少增加一个可带走清单。</dd></dl></article><article class="card diag"><h3>主页承接 <span class="score">中</span></h3><dl><dt>现状与证据</dt><dd>置顶说明人群，但栏目入口不够清楚。</dd><dt>判断</dt><dd>承诺一致，导航较弱。</dd><dt>动作</dt><dd>置顶分别承接新手、预算和时间三个入口。</dd></dl></article>
+    </div></div></section>
+    <section class="content-section" id="assets"><div class="wrap"><div class="section-head"><div class="section-no">03</div><div><h2>爆款资产复用</h2><p><b>结论：</b>爆款可以重复，重复后数据会波动。这个示例复用的是“下班限制条件 + 完整成品 + 可执行清单”，而不是同一张封面。</p></div></div><div class="asset-lead"><div class="asset-rule"><span>CORE REPEATABLE ASSET</span><b>下班场景 × 明确时间/预算 × 成品证据 × 可保存步骤</b></div><div class="bar-chart" aria-label="公开互动相对比较"><div class="bar-row"><span>首个高热</span><div class="bar-track"><div class="bar" style="width:100%"></div></div><b>基准</b></div><div class="bar-row"><span>有效复用</span><div class="bar-track"><div class="bar" style="width:72%"></div></div><b>0.72×</b></div><div class="bar-row"><span>低效样本</span><div class="bar-track"><div class="bar" style="width:24%"></div></div><b>0.24×</b></div></div></div><div class="covers">
+      <article class="cover-card"><a href="https://www.xiaohongshu.com/" target="_blank" rel="noopener noreferrer"><img src="assets/cover-1.svg" alt="三菜一汤 45 分钟"></a><div class="cover-body"><b>三菜一汤 45 分钟</b><span>高热基准 · 承诺完整</span></div></article><article class="cover-card"><a href="https://www.xiaohongshu.com/" target="_blank" rel="noopener noreferrer"><img src="assets/cover-2.svg" alt="一锅到底炖饭"></a><div class="cover-body"><b>一锅到底炖饭</b><span>有效复用 · 场景明确</span></div></article><article class="cover-card"><a href="https://www.xiaohongshu.com/" target="_blank" rel="noopener noreferrer"><img src="assets/cover-3.svg" alt="20 元吃两顿"></a><div class="cover-body"><b>20 元吃两顿</b><span>结构迭代 · 证据增强</span></div></article><article class="cover-card"><a href="https://www.xiaohongshu.com/" target="_blank" rel="noopener noreferrer"><img src="assets/cover-4.svg" alt="今天吃什么"></a><div class="cover-body"><b>今天吃什么</b><span>低效样本 · 信息过泛</span></div></article>
+    </div><div class="compare"><article class="compare-card"><span class="tag">高热</span><h3>三菜一汤，只花 45 分钟</h3><p>人群、结果、时间和成品证据同时成立，正文再用顺序清单兑现。</p></article><div class="versus">VS</div><article class="compare-card"><span class="tag">低效</span><h3>今天吃什么</h3><p>只有泛场景和成品，没有对象、限制或新增信息，用户难以预判收益。</p></article></div><div class="formulas"><div class="formula"><b>选题公式</b>具体人群 + 当下限制 + 一顿饭的完整结果</div><div class="formula"><b>标题公式</b>场景 + 数字限制 + 明确成果</div><div class="formula"><b>封面公式</b>单一主标题 + 完整成品 + 一项证据标签</div></div><div class="table-wrap"><table><thead><tr><th>样本</th><th>日期</th><th>重复元素</th><th>变化元素</th><th>公开互动</th><th>判定</th></tr></thead><tbody><tr><td><a href="https://www.xiaohongshu.com/" target="_blank" rel="noopener noreferrer">三菜一汤 45 分钟</a></td><td>2026-05-08</td><td>时间承诺、完整成品</td><td>三道新菜与顺序</td><td>高热基准</td><td>首个高热</td></tr><tr><td><a href="https://www.xiaohongshu.com/" target="_blank" rel="noopener noreferrer">一锅到底炖饭</a></td><td>2026-05-19</td><td>下班场景、数字标题</td><td>烹饪工具</td><td>相对高热</td><td>有效复用</td></tr><tr><td><a href="https://www.xiaohongshu.com/" target="_blank" rel="noopener noreferrer">20 元吃两顿</a></td><td>2026-06-02</td><td>限制条件、成品证据</td><td>预算表</td><td>中高段</td><td>结构迭代</td></tr><tr><td><a href="https://www.xiaohongshu.com/" target="_blank" rel="noopener noreferrer">今天吃什么</a></td><td>2026-06-12</td><td>成品图</td><td>缺少明确限制</td><td>低段</td><td>低效样本</td></tr><tr><td><a href="https://www.xiaohongshu.com/" target="_blank" rel="noopener noreferrer">30 分钟备餐</a></td><td>2026-06-20</td><td>时间承诺、步骤</td><td>两日份结果</td><td>中段</td><td>可继续验证</td></tr></tbody></table></div></div></section>
+    <section class="content-section" id="compliance"><div class="wrap"><div class="section-head"><div class="section-no">04</div><div><h2>合规边界</h2><p>只保留与本账号直接相关的风险，不把规范全文搬进报告。</p></div></div><div class="risks"><article class="risk"><b>效果承诺</b><p>时间与预算需要展示口径，不能把个例写成人人保证。</p></article><article class="risk"><b>食品安全</b><p>隔夜、保存与加热建议需要注明条件和边界。</p></article><article class="risk"><b>商业合作</b><p>品牌与食材合作需要按当期规则清晰标识。</p></article><article class="risk"><b>素材版权</b><p>菜谱、图片和音乐使用原创或已获授权素材。</p></article></div></div></section>
+    <section class="content-section" id="route"><div class="wrap"><div class="section-head"><div class="section-no">05</div><div><h2>对标学习与发展路线</h2><p><b>迁移公式：</b>固定人群与需求 × 可持续拍摄场景 × 可重复内容结构 × 每篇新信息</p></div></div><div class="learn-grid"><article class="card"><span class="tag">向博主学什么</span><h3>学限制条件，不抄菜谱</h3><p>值得迁移的是把内容变成具体场景下的解决方案，以及用结果物兑现承诺。</p></article><article class="card"><span class="tag">初期先打造什么</span><h3>一个稳定厨房场景</h3><p>先固定人群、拍摄位置、封面信息层级和正文步骤，再扩菜系。</p></article></div><div class="route"><article class="card"><span class="tag">01 起号基建</span><h3>建立下班晚餐承诺</h3><p><b>必做：</b>定义 3 个支柱与固定视觉结构。</p><p><b>保持：</b>人群、场景和主承诺。</p></article><article class="card"><span class="tag">02 验证固化</span><h3>验证两类限制条件</h3><p><b>必做：</b>每次只改时间或预算一个变量。</p><p><b>进阶：</b>同一结构多篇高于自身中位水平。</p></article><article class="card"><span class="tag">03 放大扩展</span><h3>扩展相邻晚餐需求</h3><p><b>必做：</b>增加合集、替代方案和备餐流程。</p><p><b>进阶：</b>评论持续提出同类下一步需求。</p></article></div><div class="ratio"><span></span><span></span><span></span></div><p class="muted">建议配比：50% 核心效率晚餐 / 25% 预算挑战 / 25% 食材替代与复盘。</p><div class="chapter-note"><b>测试标题：</b>“加班回家 30 分钟，两菜一汤按这个顺序做” · “20 元工作日晚餐，第二天还能带饭” · “只有一口锅，7 种食材这样安排”</div></div></section>
+    <section class="content-section" id="sources"><div class="wrap"><div class="section-head"><div class="section-no">06</div><div><h2>数据说明与来源</h2><p>采集日期、证据类型、缺失字段和规则来源都在这里交代清楚。</p></div></div><div class="source-card"><p>采集日期：2026-08-27<br>数据类型：全部为虚构演示数据<br>未获取字段：真实账号、真实互动、真实评论与后台数据</p><ul class="source-list"><li><a href="https://www.xiaohongshu.com/" target="_blank" rel="noopener noreferrer">小红书首页（仅作示例链接）</a></li><li><a href="https://agree.xiaohongshu.com/h5/terms/ZXXY20221213003/-1" target="_blank" rel="noopener noreferrer">小红书社区规范</a></li><li>本报告账号、数据、结论均为虚构演示，不对应真实个人。</li></ul></div><div class="contact" id="longjin-contact" hidden><img src="assets/avatar.svg" alt="Longjin 微信二维码"><div><b>Longjin</b><p>小红书账号拆解与内容策略</p><p>扫码联系，请在公开发布前确认二维码属于项目维护者。</p></div></div></div></section>
+  </main>
+  <footer><div class="wrap">xhs-chaijie-dsh · Prepared by Longjin · 只基于公开或用户授权材料</div></footer>
+  <script>const links=[...document.querySelectorAll('.nav a')];const targets=links.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);if('IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')===`#${entry.target.id}`));}}),{rootMargin:'-25% 0px -68% 0px'});targets.forEach(target=>observer.observe(target));}</script>
+</body>
+</html>

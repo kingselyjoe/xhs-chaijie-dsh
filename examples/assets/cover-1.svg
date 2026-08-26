@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="800" viewBox="0 0 600 800">
+  <rect width="600" height="800" fill="#f7eee3"/><rect x="38" y="38" width="524" height="724" rx="18" fill="#fff" stroke="#26363b" stroke-width="3"/>
+  <text x="72" y="130" font-size="30" font-family="sans-serif" fill="#b6423f">周末小厨房</text><text x="72" y="210" font-size="55" font-weight="700" font-family="sans-serif" fill="#172026">三菜一汤</text><text x="72" y="278" font-size="55" font-weight="700" font-family="sans-serif" fill="#172026">只花 45 分钟</text>
+  <circle cx="300" cy="500" r="150" fill="#e5bb76"/><circle cx="255" cy="470" r="48" fill="#6f9a63"/><circle cx="352" cy="535" r="58" fill="#b6423f"/><circle cx="238" cy="565" r="40" fill="#f4d15e"/><text x="72" y="708" font-size="28" font-family="sans-serif" fill="#526067">时间顺序 + 备菜清单</text>
+</svg>

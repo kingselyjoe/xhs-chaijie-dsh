@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <link rel="icon" href="data:,">
+  <title>[[ACCOUNT_NAME]]｜小红书账号拆解报告</title>
+  <style>
+    :root {
+      --accent: #d66b32;
+      --accent-2: #f29a58;
+      --accent-deep: #5a3020;
+      --accent-soft: #fff0e2;
+      --ink: #24211f;
+      --muted: #736c67;
+      --line: #eadfd5;
+      --paper: #fff;
+      --canvas: #fffaf5;
+      --cream: #fff4e8;
+      --green: #39705b;
+      --warn: #a97800;
+      --shadow: 0 16px 44px rgba(83, 46, 23, .10);
+      --soft-shadow: 0 8px 26px rgba(83, 46, 23, .055);
+      --radius: 20px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: linear-gradient(180deg, var(--canvas) 0, #fff 26%, #fff9f3 100%); font: 15px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; }
+    h1, h2, h3, p, a, td, th { overflow-wrap: anywhere; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-underline-offset: 3px; }
+    .wrap { width: min(1180px, calc(100% - 56px)); margin: 0 auto; }
+    .topbar { position: sticky; top: 0; z-index: 20; border-bottom: 1px solid color-mix(in srgb, var(--accent) 16%, white); background: color-mix(in srgb, var(--canvas) 90%, transparent); backdrop-filter: blur(16px); }
+    .topbar-inner { min-height: 60px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 11px; white-space: nowrap; }
+    .brand-mark { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 10px; color: #fff; background: var(--accent); font-weight: 900; }
+    .brand strong { font-size: 14px; letter-spacing: .08em; }
+    .brand small { color: var(--muted); }
+    .nav { display: flex; align-items: center; gap: 17px; overflow: auto; white-space: nowrap; scrollbar-width: none; }
+    .nav::-webkit-scrollbar { display: none; }
+    .nav a { color: var(--muted); font-size: 13px; text-decoration: none; }
+    .nav a:hover, .nav a.active { color: var(--accent); }
+    .hero { padding: 56px 0 30px; }
+    .hero-grid { display: grid; grid-template-columns: 1.28fr .72fr; gap: 26px; align-items: stretch; }
+    .hero-main { position: relative; isolation: isolate; min-height: 500px; padding: 44px; overflow: hidden; border-radius: 28px; color: #fff; background: radial-gradient(circle at 88% 10%, color-mix(in srgb, var(--accent-2) 90%, white) 0, transparent 29%), linear-gradient(135deg, var(--accent-deep), color-mix(in srgb, var(--accent-deep) 56%, var(--accent)) 62%, var(--accent)); box-shadow: var(--shadow); }
+    .hero-main::after { content: "析"; position: absolute; z-index: -1; right: -10px; bottom: -110px; color: rgba(255,255,255,.055); font: 900 290px/1 Georgia, serif; }
+    .eyebrow { margin: 0 0 15px; font-size: 12px; font-weight: 850; letter-spacing: .17em; text-transform: uppercase; opacity: .82; }
+    .hero h1 { max-width: 790px; margin: 0; font-size: clamp(38px, 5vw, 64px); line-height: 1.1; letter-spacing: -.035em; }
+    .hero h1 em { color: #ffd1ad; font-style: normal; }
+    .hero-lead { max-width: 720px; margin: 22px 0 0; color: #ffe9da; font-size: 18px; }
+    .hero-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+    .pill { padding: 6px 11px; border: 1px solid rgba(255,255,255,.27); border-radius: 99px; background: rgba(255,255,255,.08); font-size: 12px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 43px; padding: 9px 16px; border: 1px solid rgba(255,255,255,.38); border-radius: 11px; color: #fff; text-decoration: none; font-weight: 760; }
+    .button.primary { border-color: #fff; background: #fff; color: var(--accent-deep); }
+    .profile-card { padding: 25px; border: 1px solid var(--line); border-radius: 28px; background: var(--paper); box-shadow: var(--shadow); }
+    .identity { display: flex; align-items: center; gap: 14px; }
+    .avatar { width: 66px; height: 66px; border: 3px solid var(--cream); border-radius: 18px; object-fit: cover; background: var(--cream); }
+    .identity h2 { margin: 0; font-size: 20px; line-height: 1.3; }
+    .identity p { margin: 4px 0 0; color: var(--muted); font-size: 12px; }
+    .metrics { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin: 20px 0; }
+    .metric { padding: 12px 9px; border-radius: 13px; background: var(--canvas); text-align: center; }
+    .metric b { display: block; color: var(--accent-deep); font-size: 20px; line-height: 1.2; }
+    .metric span { color: var(--muted); font-size: 11px; }
+    .hero-cover-wrap { display: grid; grid-template-columns: 126px 1fr; gap: 15px; align-items: center; padding-top: 18px; border-top: 1px solid var(--line); }
+    .hero-cover { width: 126px; aspect-ratio: 3/4; border-radius: 13px; object-fit: contain; background: var(--cream); }
+    .verdict b { color: var(--accent); font-size: 12px; }
+    .verdict p { margin: 5px 0 0; color: #5c544f; font-size: 13px; }
+    .evidence-link { display: inline-flex; margin-top: 8px; color: var(--accent); font-size: 12px; font-weight: 800; text-decoration: none; }
+    .conclusions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 18px; }
+    .take { min-height: 142px; padding: 20px; border: 1px solid var(--line); border-radius: 18px; background: var(--paper); }
+    .take .n { color: var(--accent); font: 850 11px/1.2 ui-monospace, monospace; letter-spacing: .08em; }
+    .take h3 { margin: 9px 0 6px; font-size: 17px; }
+    .take p { margin: 0; color: var(--muted); font-size: 13px; }
+    section.content-section { padding: 38px 0 56px; }
+    section.content-section:nth-of-type(even) { background: color-mix(in srgb, var(--cream) 36%, transparent); }
+    .section-head { display: grid; grid-template-columns: 82px 1fr; gap: 20px; align-items: start; margin-bottom: 24px; }
+    .section-no { color: color-mix(in srgb, var(--accent) 35%, white); font: 900 46px/1 Georgia, serif; }
+    .section-head h2 { margin: 0 0 7px; font-size: 30px; line-height: 1.2; }
+    .section-head p { max-width: 850px; margin: 0; color: var(--muted); }
+    .chapter-note { margin-top: 18px; padding: 17px 19px; border-left: 5px solid var(--accent); border-radius: 14px; background: var(--accent-soft); color: var(--accent-deep); }
+    .timeline { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+    .phase { padding: 22px; border: 1px solid var(--line); border-top: 5px solid var(--accent); border-radius: var(--radius); background: var(--paper); box-shadow: var(--soft-shadow); }
+    .date { color: var(--accent); font-size: 12px; font-weight: 850; }
+    .phase h3 { margin: 7px 0 12px; font-size: 18px; }
+    .phase dl, .diag dl { margin: 0; }
+    .phase dt, .diag dt { margin-top: 10px; color: var(--muted); font-size: 11px; font-weight: 800; }
+    .phase dd, .diag dd { margin: 2px 0; font-size: 13px; }
+    .diagnosis { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+    .card { padding: 22px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--paper); box-shadow: var(--soft-shadow); }
+    .diag:last-child:nth-child(odd) { grid-column: 1/-1; }
+    .card h3 { margin: 0 0 9px; font-size: 18px; }
+    .score { float: right; padding: 3px 8px; border-radius: 99px; background: #edf7f1; color: var(--green); font-size: 11px; }
+    .asset-lead { display: grid; grid-template-columns: .88fr 1.12fr; gap: 18px; margin-bottom: 18px; }
+    .asset-rule { padding: 27px; border: 1px solid #efd4be; border-radius: 23px; background: linear-gradient(135deg, var(--accent-soft), var(--canvas)); }
+    .asset-rule span { display: block; margin-bottom: 8px; color: var(--accent); font-size: 11px; font-weight: 850; letter-spacing: .1em; }
+    .asset-rule b { display: block; color: var(--accent-deep); font-size: clamp(21px, 3vw, 31px); line-height: 1.35; }
+    .bar-chart { display: grid; gap: 14px; padding: 23px; border: 1px solid var(--line); border-radius: 23px; background: var(--paper); }
+    .bar-row { display: grid; grid-template-columns: 90px 1fr 62px; gap: 10px; align-items: center; }
+    .bar-row span { font-size: 12px; }
+    .bar-row b { color: var(--accent); font-size: 12px; text-align: right; }
+    .bar-track { height: 9px; overflow: hidden; border-radius: 99px; background: #f2e8df; }
+    .bar { height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--accent), var(--accent-2)); }
+    .covers { display: grid; grid-template-columns: repeat(4, 1fr); gap: 13px; }
+    .cover-card { overflow: hidden; border: 1px solid var(--line); border-radius: 18px; background: var(--paper); box-shadow: var(--soft-shadow); }
+    .cover-card > a { display: block; padding: 8px; background: var(--canvas); }
+    .cover-card img { width: 100%; aspect-ratio: 3/4; border-radius: 12px; object-fit: contain; }
+    .cover-body { padding: 13px 15px 15px; }
+    .cover-body b, .cover-body span { display: block; }
+    .cover-body span { margin-top: 3px; color: var(--muted); font-size: 11px; }
+    .compare { display: grid; grid-template-columns: 1fr 54px 1fr; gap: 14px; align-items: center; margin-top: 17px; }
+    .compare-card { padding: 20px; border: 1px solid var(--line); border-radius: 18px; background: var(--paper); }
+    .compare-card h3 { margin: 7px 0; }
+    .compare-card p { margin: 0; color: var(--muted); }
+    .tag { display: inline-block; padding: 3px 8px; border-radius: 7px; background: var(--accent-soft); color: var(--accent); font-size: 11px; font-weight: 850; }
+    .versus { color: var(--accent); font-weight: 900; text-align: center; }
+    .formulas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 13px; margin-top: 17px; }
+    .formula { padding: 20px; border: 1px solid #efd4be; border-radius: 18px; background: var(--accent-soft); }
+    .formula b { display: block; margin-bottom: 7px; color: var(--accent); }
+    .table-wrap { margin-top: 18px; overflow-x: auto; border: 1px solid var(--line); border-radius: 18px; background: var(--paper); }
+    table { width: 100%; min-width: 790px; border-collapse: collapse; }
+    th, td { padding: 13px 12px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    th { background: var(--canvas); color: var(--muted); font-size: 11px; }
+    td { font-size: 13px; }
+    tr:last-child td { border-bottom: 0; }
+    .risks { display: grid; grid-template-columns: repeat(4, 1fr); gap: 13px; }
+    .risk { padding: 19px; border: 1px solid var(--line); border-top: 4px solid var(--warn); border-radius: 17px; background: var(--paper); }
+    .risk p { margin: 7px 0 0; color: var(--muted); font-size: 13px; }
+    .learn-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+    .learn-grid p, .route p { margin: 0; color: var(--muted); }
+    .route { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 17px; }
+    .route .card { border-top: 5px solid var(--accent); }
+    .ratio { display: grid; grid-template-columns: 2fr 1fr 1fr; height: 12px; margin: 24px 0 8px; overflow: hidden; border-radius: 99px; }
+    .ratio span:nth-child(1) { background: var(--accent-deep); }
+    .ratio span:nth-child(2) { background: var(--accent); }
+    .ratio span:nth-child(3) { background: var(--accent-2); }
+    .muted { color: var(--muted); }
+    .source-card { display: grid; grid-template-columns: 1.1fr .9fr; gap: 20px; padding: 24px; border-radius: 20px; background: #35261f; color: #f7e8dc; }
+    .source-card p { margin: 0; color: #d4bfb0; }
+    .source-list { columns: 2; margin: 0; padding-left: 20px; }
+    .source-list a { color: #ffd2b1; }
+    .contact { display: flex; align-items: center; gap: 17px; margin-top: 17px; padding: 18px; border: 1px solid var(--line); border-radius: 18px; background: var(--paper); }
+    .contact[hidden] { display: none; }
+    .contact img { width: 112px; height: 112px; object-fit: contain; }
+    .contact p { margin: 2px 0; color: var(--muted); }
+    footer { padding: 16px 0 42px; color: var(--muted); font-size: 12px; text-align: center; }
+    @media (max-width: 920px) { .nav { display: none; } .hero-grid, .asset-lead { grid-template-columns: 1fr; } .hero-main { min-height: auto; } .profile-card { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; } .profile-card .identity { grid-column: 1/-1; } .hero-cover-wrap { padding: 0; border: 0; } .conclusions { grid-template-columns: 1fr; } .covers { grid-template-columns: repeat(2, 1fr); } .risks { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 620px) { .wrap { width: min(100% - 22px, 520px); } .topbar-inner { min-height: 54px; } .brand small { display: none; } .hero { padding-top: 24px; } .hero-main { padding: 26px; border-radius: 22px; } .hero h1 { font-size: 35px; } .hero-lead { font-size: 15px; } .profile-card { display: block; border-radius: 22px; } .hero-cover-wrap { margin-top: 18px; padding-top: 17px; border-top: 1px solid var(--line); } section.content-section { padding: 30px 0 42px; } .section-head { grid-template-columns: 54px 1fr; gap: 11px; } .section-no { font-size: 32px; } .section-head h2 { font-size: 24px; } .timeline, .diagnosis, .covers, .formulas, .risks, .learn-grid, .route { grid-template-columns: 1fr; } .diag:last-child:nth-child(odd) { grid-column: auto; } .compare { grid-template-columns: 1fr; } .versus { padding: 2px; } .bar-row { grid-template-columns: 78px 1fr 54px; } .source-card { grid-template-columns: 1fr; } .source-list { columns: 1; } .contact { align-items: flex-start; flex-direction: column; } }
+    @media print { body { background: #fff; } .topbar { display: none; } .hero-main, .profile-card, .card, .phase, .cover-card { box-shadow: none; } section.content-section { break-inside: avoid; } }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+  <!-- 替换全部双中括号字段；删除无证据的示例项；二维码未提供时保持 contact hidden。 -->
+  <header class="topbar"><div class="wrap topbar-inner"><div class="brand"><span class="brand-mark">L</span><strong>LONGJIN</strong><small>/ 小红书账号拆解</small></div><nav class="nav" aria-label="报告导航"><a href="#summary">总览</a><a href="#evolution">演化</a><a href="#diagnosis">诊断</a><a href="#assets">爆款资产</a><a href="#compliance">合规</a><a href="#route">路线</a><a href="#sources">来源</a></nav></div></header>
+  <main>
+    <section class="hero" id="summary"><div class="wrap"><div class="hero-grid">
+      <article class="hero-main"><p class="eyebrow">XIAOHONGSHU ACCOUNT INTELLIGENCE · [[COLLECTED_DATE]]</p><h1>它靠 <em>[[CORE_ENGINE]]</em>，持续 [[REPEAT_ACTION]]，从而 [[VISIBLE_RESULT]]。</h1><p class="hero-lead">[[ONE_MINUTE_SUMMARY]]</p><div class="hero-meta"><span class="pill">[[ACCOUNT_CATEGORY]]</span><span class="pill">公开证据</span><span class="pill">真实封面审计</span><span class="pill">可执行路线</span></div><div class="actions"><a class="button primary" href="#assets">查看爆款资产</a><a class="button" href="[[ACCOUNT_URL]]" target="_blank" rel="noopener noreferrer">打开账号 ↗</a></div></article>
+      <aside class="profile-card"><div class="identity"><a href="[[ACCOUNT_URL]]" target="_blank" rel="noopener noreferrer"><img class="avatar" src="[[AVATAR_PATH]]" alt="[[ACCOUNT_NAME]] 头像"></a><div><h2>[[ACCOUNT_NAME]]</h2><p>[[ACCOUNT_CATEGORY]] · 数据截至 [[COLLECTED_DATE]]</p></div></div><div class="metrics"><div class="metric"><b>[[METRIC_1]]</b><span>[[METRIC_1_LABEL]]</span></div><div class="metric"><b>[[METRIC_2]]</b><span>[[METRIC_2_LABEL]]</span></div><div class="metric"><b>[[METRIC_3]]</b><span>[[METRIC_3_LABEL]]</span></div><div class="metric"><b>[[METRIC_4]]</b><span>[[METRIC_4_LABEL]]</span></div></div><div class="hero-cover-wrap"><a href="[[HERO_NOTE_URL]]" target="_blank" rel="noopener noreferrer"><img class="hero-cover" src="[[HERO_COVER_PATH]]" alt="代表笔记封面，完整 3:4 显示"></a><div class="verdict"><b>确定结论</b><p>[[HERO_EVIDENCE]]</p><a class="evidence-link" href="[[HERO_NOTE_URL]]" target="_blank" rel="noopener noreferrer">查看原笔记 ↗</a></div></div></aside>
+    </div><div class="conclusions"><article class="take"><span class="n">01 / STRATEGY</span><h3>[[STRATEGY_TITLE]]</h3><p>[[STRATEGY_TEXT]]</p></article><article class="take"><span class="n">02 / ADVANTAGE</span><h3>[[ADVANTAGE_TITLE]]</h3><p>[[ADVANTAGE_TEXT]]</p></article><article class="take"><span class="n">03 / PROBLEM</span><h3>[[PROBLEM_TITLE]]</h3><p>[[PROBLEM_TEXT]]</p></article></div></div></section>
+    <section class="content-section" id="evolution"><div class="wrap"><div class="section-head"><div class="section-no">01</div><div><h2>带日期的账号演化</h2><p><b>结论：</b>[[EVOLUTION_CONCLUSION]]</p></div></div><div class="timeline">
+      <article class="phase"><span class="date">[[PHASE_1_DATE]]</span><h3>[[PHASE_1_TITLE]]</h3><dl><dt>代表内容</dt><dd>[[PHASE_1_NOTE]] · <a href="[[PHASE_1_URL]]" target="_blank" rel="noopener noreferrer">查看代表笔记</a></dd><dt>当时做法</dt><dd>[[PHASE_1_ACTION]]</dd><dt>变化与保留</dt><dd>[[PHASE_1_CHANGE]]</dd></dl></article>
+      <article class="phase"><span class="date">[[PHASE_2_DATE]]</span><h3>[[PHASE_2_TITLE]]</h3><dl><dt>代表内容</dt><dd>[[PHASE_2_NOTE]] · <a href="[[PHASE_2_URL]]" target="_blank" rel="noopener noreferrer">查看代表笔记</a></dd><dt>当时做法</dt><dd>[[PHASE_2_ACTION]]</dd><dt>变化与保留</dt><dd>[[PHASE_2_CHANGE]]</dd></dl></article>
+      <article class="phase"><span class="date">[[PHASE_3_DATE]]</span><h3>[[PHASE_3_TITLE]]</h3><dl><dt>代表内容</dt><dd>[[PHASE_3_NOTE]] · <a href="[[PHASE_3_URL]]" target="_blank" rel="noopener noreferrer">查看代表笔记</a></dd><dt>当时做法</dt><dd>[[PHASE_3_ACTION]]</dd><dt>变化与保留</dt><dd>[[PHASE_3_CHANGE]]</dd></dl></article>
+    </div><p class="chapter-note"><b>最关键转折：</b>[[EVOLUTION_TURNING_POINT]]</p></div></section>
+    <section class="content-section" id="diagnosis"><div class="wrap"><div class="section-head"><div class="section-no">02</div><div><h2>五项内容诊断</h2><p><b>结论：</b>[[DIAGNOSIS_CONCLUSION]]</p></div></div><div class="diagnosis">
+      <article class="card diag"><h3>定位与人群 <span class="score">[[LEVEL_1]]</span></h3><dl><dt>现状与证据</dt><dd>[[DIAG_1_EVIDENCE]]</dd><dt>判断</dt><dd>[[DIAG_1_JUDGEMENT]]</dd><dt>动作</dt><dd>[[DIAG_1_ACTION]]</dd></dl></article><article class="card diag"><h3>选题与需求 <span class="score">[[LEVEL_2]]</span></h3><dl><dt>现状与证据</dt><dd>[[DIAG_2_EVIDENCE]]</dd><dt>判断</dt><dd>[[DIAG_2_JUDGEMENT]]</dd><dt>动作</dt><dd>[[DIAG_2_ACTION]]</dd></dl></article><article class="card diag"><h3>标题与封面 <span class="score">[[LEVEL_3]]</span></h3><dl><dt>现状与证据</dt><dd>[[DIAG_3_EVIDENCE]]</dd><dt>判断</dt><dd>[[DIAG_3_JUDGEMENT]]</dd><dt>动作</dt><dd>[[DIAG_3_ACTION]]</dd></dl></article><article class="card diag"><h3>内容价值 <span class="score">[[LEVEL_4]]</span></h3><dl><dt>现状与证据</dt><dd>[[DIAG_4_EVIDENCE]]</dd><dt>判断</dt><dd>[[DIAG_4_JUDGEMENT]]</dd><dt>动作</dt><dd>[[DIAG_4_ACTION]]</dd></dl></article><article class="card diag"><h3>主页承接 <span class="score">[[LEVEL_5]]</span></h3><dl><dt>现状与证据</dt><dd>[[DIAG_5_EVIDENCE]]</dd><dt>判断</dt><dd>[[DIAG_5_JUDGEMENT]]</dd><dt>动作</dt><dd>[[DIAG_5_ACTION]]</dd></dl></article>
+    </div></div></section>
+    <section class="content-section" id="assets"><div class="wrap"><div class="section-head"><div class="section-no">03</div><div><h2>爆款资产复用</h2><p><b>结论：</b>爆款可以重复，重复后数据会波动。[[ASSET_CONCLUSION]]</p></div></div><div class="asset-lead"><div class="asset-rule"><span>CORE REPEATABLE ASSET</span><b>[[CORE_ASSET]]</b></div><div class="bar-chart" aria-label="公开互动相对比较"><div class="bar-row"><span>首个高热</span><div class="bar-track"><div class="bar" style="width:[[BAR_1]]%"></div></div><b>[[BAR_1_VALUE]]</b></div><div class="bar-row"><span>有效复用</span><div class="bar-track"><div class="bar" style="width:[[BAR_2]]%"></div></div><b>[[BAR_2_VALUE]]</b></div><div class="bar-row"><span>低效样本</span><div class="bar-track"><div class="bar" style="width:[[BAR_3]]%"></div></div><b>[[BAR_3_VALUE]]</b></div></div></div><div class="covers">
+      <article class="cover-card"><a href="[[COVER_1_URL]]" target="_blank" rel="noopener noreferrer"><img src="[[COVER_1_PATH]]" alt="[[COVER_1_TITLE]]"></a><div class="cover-body"><b>[[COVER_1_TITLE]]</b><span>[[COVER_1_DATA]] · [[COVER_1_LABEL]]</span></div></article><article class="cover-card"><a href="[[COVER_2_URL]]" target="_blank" rel="noopener noreferrer"><img src="[[COVER_2_PATH]]" alt="[[COVER_2_TITLE]]"></a><div class="cover-body"><b>[[COVER_2_TITLE]]</b><span>[[COVER_2_DATA]] · [[COVER_2_LABEL]]</span></div></article><article class="cover-card"><a href="[[COVER_3_URL]]" target="_blank" rel="noopener noreferrer"><img src="[[COVER_3_PATH]]" alt="[[COVER_3_TITLE]]"></a><div class="cover-body"><b>[[COVER_3_TITLE]]</b><span>[[COVER_3_DATA]] · [[COVER_3_LABEL]]</span></div></article><article class="cover-card"><a href="[[COVER_4_URL]]" target="_blank" rel="noopener noreferrer"><img src="[[COVER_4_PATH]]" alt="[[COVER_4_TITLE]]"></a><div class="cover-body"><b>[[COVER_4_TITLE]]</b><span>[[COVER_4_DATA]] · [[COVER_4_LABEL]]</span></div></article>
+    </div><div class="compare"><article class="compare-card"><span class="tag">高热</span><h3>[[HIGH_TITLE]]</h3><p>[[HIGH_REASON]]</p></article><div class="versus">VS</div><article class="compare-card"><span class="tag">低效</span><h3>[[LOW_TITLE]]</h3><p>[[LOW_REASON]]</p></article></div><div class="formulas"><div class="formula"><b>选题公式</b>[[TOPIC_FORMULA]]</div><div class="formula"><b>标题公式</b>[[TITLE_FORMULA]]</div><div class="formula"><b>封面公式</b>[[COVER_FORMULA]]</div></div><div class="table-wrap"><table><thead><tr><th>样本</th><th>日期</th><th>重复元素</th><th>变化元素</th><th>公开互动</th><th>判定</th></tr></thead><tbody>[[ASSET_ROWS]]</tbody></table></div></div></section>
+    <section class="content-section" id="compliance"><div class="wrap"><div class="section-head"><div class="section-no">04</div><div><h2>合规边界</h2><p>只保留与本账号直接相关的风险，不把规范全文搬进报告。</p></div></div><div class="risks"><article class="risk"><b>[[RISK_1_TITLE]]</b><p>[[RISK_1_TEXT]]</p></article><article class="risk"><b>[[RISK_2_TITLE]]</b><p>[[RISK_2_TEXT]]</p></article><article class="risk"><b>[[RISK_3_TITLE]]</b><p>[[RISK_3_TEXT]]</p></article><article class="risk"><b>[[RISK_4_TITLE]]</b><p>[[RISK_4_TEXT]]</p></article></div></div></section>
+    <section class="content-section" id="route"><div class="wrap"><div class="section-head"><div class="section-no">05</div><div><h2>对标学习与发展路线</h2><p><b>迁移公式：</b>固定人群与需求 × 可持续拍摄场景 × 可重复内容结构 × 每篇新信息</p></div></div><div class="learn-grid"><article class="card"><span class="tag">向博主学什么</span><h3>[[LEARN_TITLE]]</h3><p>[[LEARN_TEXT]]</p></article><article class="card"><span class="tag">初期先打造什么</span><h3>[[BUILD_TITLE]]</h3><p>[[BUILD_TEXT]]</p></article></div><div class="route"><article class="card"><span class="tag">01 起号基建</span><h3>[[ROUTE_1_GOAL]]</h3><p><b>必做：</b>[[ROUTE_1_TASK]]</p><p><b>保持：</b>[[ROUTE_1_KEEP]]</p></article><article class="card"><span class="tag">02 验证固化</span><h3>[[ROUTE_2_GOAL]]</h3><p><b>必做：</b>[[ROUTE_2_TASK]]</p><p><b>进阶：</b>[[ROUTE_2_SIGNAL]]</p></article><article class="card"><span class="tag">03 放大扩展</span><h3>[[ROUTE_3_GOAL]]</h3><p><b>必做：</b>[[ROUTE_3_TASK]]</p><p><b>进阶：</b>[[ROUTE_3_SIGNAL]]</p></article></div><div class="ratio"><span></span><span></span><span></span></div><p class="muted">[[CONTENT_RATIO]]</p><div class="chapter-note"><b>测试标题：</b>[[TITLE_EXAMPLES]]</div></div></section>
+    <section class="content-section" id="sources"><div class="wrap"><div class="section-head"><div class="section-no">06</div><div><h2>数据说明与来源</h2><p>采集日期、证据类型、缺失字段和规则来源都在这里交代清楚。</p></div></div><div class="source-card"><p>采集日期：[[COLLECTED_DATE]]<br>数据类型：[[SOURCE_TYPE]]<br>未获取字段：[[MISSING_FIELDS]]</p><ul class="source-list">[[SOURCE_ITEMS]]</ul></div><div class="contact" id="longjin-contact" hidden><img src="[[LONGJIN_QR_PATH]]" alt="Longjin 微信二维码"><div><b>Longjin</b><p>小红书账号拆解与内容策略</p><p>扫码联系，请在公开发布前确认二维码属于项目维护者。</p></div></div></div></section>
+  </main>
+  <footer><div class="wrap">xhs-chaijie-dsh · Prepared by Longjin · 只基于公开或用户授权材料</div></footer>
+  <script>const links=[...document.querySelectorAll('.nav a')];const targets=links.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);if('IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')===`#${entry.target.id}`));}}),{rootMargin:'-25% 0px -68% 0px'});targets.forEach(target=>observer.observe(target));}</script>
+</body>
+</html>

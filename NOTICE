@@ -1,0 +1,18 @@
+xhs-chaijie-dsh
+================
+
+This project is maintained and branded by Longjin as a DSH-native adaptation
+and enhancement of ache-chaijie-skill.
+
+Upstream project:
+  acheAIsuiyimen/ache-chaijie-skill
+  https://github.com/acheAIsuiyimen/ache-chaijie-skill
+
+The upstream MIT copyright and permission notice are retained in LICENSE.
+Longjin's modifications include DSH-native discovery and capability routing,
+an expanded report contract, a redesigned self-contained report template,
+installation and diagnostic scripts, automated validation, examples, and
+GitHub presentation assets.
+
+Public-facing product branding belongs to Longjin. This notice does not claim
+authorship of the upstream work and must remain with redistributed copies.

@@ -1,0 +1,4 @@
+[
+  "tests/test_validators.py::test_dsh_entry_name",
+  "tests/test_validators.py::test_sample_report_contract"
+]
