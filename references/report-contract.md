@@ -37,6 +37,8 @@ HTML/CSS/JS 自包含，不依赖 npm、CDN、网络字体或作者电脑绝对�
 
 生成时以 [../assets/report-template.html](../assets/report-template.html) 为视觉和结构基线，只替换内容、链接、图片和主题变量。删除所有示例说明和未使用模块。
 
+维护者二维码位于 `assets/brand/wechat-qr.png`。仅当用户明确要求在报告中展示 Longjin 联系方式时，才将原图复制到报告资源目录、替换 `[[LONGJIN_QR_PATH]]` 并移除 `#longjin-contact` 的 `hidden` 属性；其他报告保持隐藏，不解析、不重绘、不裁切二维码。
+
 ## 交付前验证
 
 - 桌面 1280px 和手机 390px 无横向溢出、重叠或文字裁切。

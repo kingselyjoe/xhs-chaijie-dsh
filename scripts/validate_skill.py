@@ -13,6 +13,7 @@ REQUIRED = {
     "LICENSE",
     "NOTICE",
     "assets/report-template.html",
+    "assets/brand/wechat-qr.png",
     "references/dsh-tool-routing.md",
     "references/xhs-analysis.md",
     "references/xhs-knowledge-base.md",
@@ -85,12 +86,18 @@ def main():
     readme_path = ROOT / "README.md"
     if readme_path.is_file():
         readme = readme_path.read_text(encoding="utf-8")
+        if 'src="assets/brand/wechat-qr.png"' not in readme:
+            errors.append("README must display the Longjin WeChat QR asset")
         for target in re.findall(r"\]\(([^)]+)\)", readme):
             if target.startswith(("http://", "https://", "#", "mailto:")):
                 continue
             local_target = target.split("#", 1)[0]
             if local_target and not (ROOT / local_target).exists():
                 errors.append(f"README local link does not exist: {target}")
+
+    qr_path = ROOT / "assets" / "brand" / "wechat-qr.png"
+    if qr_path.is_file() and not qr_path.read_bytes().startswith(b"\x89PNG\r\n\x1a\n"):
+        errors.append("Longjin WeChat QR asset must remain a valid PNG file")
 
     if errors:
         print("Skill validation failed:", file=sys.stderr)

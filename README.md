@@ -170,7 +170,11 @@ python scripts/validate_report_links.py examples/sample_report.html
 
 **Longjin**
 
-微信二维码会在发布 GitHub 前使用维护者提供的原图加入，本仓库不生成或冒用联系方式。二维码缺失不会影响 Skill 的分析与报告能力。
+<p>
+  <img src="assets/brand/wechat-qr.png" alt="Longjin 微信二维码" width="220">
+</p>
+
+扫码添加微信，请备注 `xhs-chaijie-dsh`。
 
 ## 许可证与上游
 
